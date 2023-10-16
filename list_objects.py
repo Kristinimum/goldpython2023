@@ -18,12 +18,13 @@ def list_objects_keys(client, bucket, prefix=""):
     return keys    
 
 
-s3 = boto3.client('s3')
+if __name__== '__main__':
+    s3 = boto3.client('s3')
 
-response = list_objects_keys(s3, "kmaxwell-boto3-10152023", "folder/")
-print(response)
+    response = list_objects_keys(s3, "kmaxwell-boto3-10152023", "folder/")
+    print(response)
 #s3.list_objects_v2(Bucket="kmaxwell-boto3-10152023") #Prefix="folder/folder_a/")
-response = filter_objects_extension(s3, "kmaxwell-boto3-10152023", "/")
-print(response)
+    response = filter_objects_extension(s3, "kmaxwell-boto3-10152023", "/")
+    print(response)
 
     
